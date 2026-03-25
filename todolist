@@ -1,0 +1,53 @@
+class To_do_list:
+    def __init__(self):
+        self.task= []
+        
+        self.menu()
+    def menu(self):
+        while True: 
+            choice = input ("""
+                        1. To add task 
+                        2. To show task 
+                        3. To remove task
+                        """)
+            if choice == "1":
+              self.add_task()
+            elif choice =="2":
+              self.show_task()
+            elif choice == "3":
+              self.remove_task()
+            elif choice == "4":
+              print ("bye")
+              break
+            else :
+                 print ("loop is broken")
+    
+    def add_task (self):
+        task = input ("Your tasks:> ")
+        self.task.append(task)
+        print ("Tasks are added")
+    
+    def  show_task (self):
+        if not self.task :
+           return   
+        print ("Task to do ", self.task )
+        
+    def remove_task(self):
+        if not self.task:
+            return
+        print ("task you want to remove from this list",self.task)
+        no = int(input("the no>>"))
+        removed  =self.task.pop(no - 1)
+        print("removed task >>", removed)
+        
+win = To_do_list()        
+        
+         
+         
+         
+         
+         
+         
+         
+         
+        
